@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{%block body%}
+<div class="container">
+    <h1 class="my-3" onclick="history.back()"><< <u>{{content1.name}}</u> </h1> 
+    
+    
+{{content1.content|safe}}
+
+<a href="/quiz/{{data.id}}"><button type="button" class="btn btn-danger">Quiz Karega..  hai Himmat</button></a>
+</div>
+
+{%endblock%}

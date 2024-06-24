@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}This is home{% endblock %}
+
+{% block style %}
+<style>
+.card-img-top {
+    width: 200px; /* Adjust this value as per your design */
+    height: 200px; /* Adjust this value as per your design */
+    object-fit: cover; /* Ensures the image covers the specified dimensions */
+    border-radius: 5%; /* Adjust border radius as per your design */
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    
+    <div class="d-flex flex-wrap">
+        {% for c in course %}
+        <div class="card mx-2 my-3 c-white" style="width: 18rem; border-radius: 5%; width: 252px; height: 325px;">
+            <img class="card-img-top my-5 mx-3" src="/media/{{ c.img }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ c.name }}</h5>
+                <a href="subject/{{ c.id }}" class="btn btn-primary">Let's Study</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

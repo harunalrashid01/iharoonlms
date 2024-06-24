@@ -1,0 +1,42 @@
+
+<!-- <div class="container"> -->
+
+<nav class="navbar navbar-expand-lg navbar-light   a-bg">
+    <a class="navbar-brand" href="/">Iharoon</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Iharoon <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/logout">Logout !</a>
+        </li>
+     
+        {% if user.is_staff%}
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        {% else %}
+        {% endif %}
+       
+      </ul>
+
+    </div>
+    <div class="float-right mx-4">Hi, Master {{user.username}}</div>
+    {% if user.profile.picture %}
+   
+    <img src="{{ user.profile.picture.url }}" alt="..." class="rounded-circle" style="width:40px; height:40px">
+    {% else %}
+    
+    <img src=" /media/profile_pics/Default_make_a_faceless_spy_1_pSdVxdQ.jpg" alt="..." class="rounded-circle" style="width:40px; height:40px">
+    {% endif %}
+  </nav>
+
+
+

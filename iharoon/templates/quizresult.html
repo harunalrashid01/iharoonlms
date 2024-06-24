@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+
+{%block body%}
+<div class="container my-5 c-white">
+<div class="row">
+    <div class="col">
+        {% if score == 0 %}
+        <img src=" /media/test/0marks.jpeg"  style="width:500px; height:500px">
+        {% elif score > 30 %}
+        <img src=" /media/test/a50.png"  style="width:500px; height:500px">
+        {% elif score < 30 %}
+        <img src=" /media/test/b50.png"  style="width:500px; height:500px">
+        {% elif score == 60 %}
+        <img src=" /media/test/100marks.png"  style="width:500px; height:500px">
+        {% else %}
+        <img src=" /media/test/a50.png"  style="width:500px; height:500px">
+        {% endif %}
+    </div>
+    <div class="col">
+
+      <div class="container">
+        <h1>{{quiz_name}}</h1>
+        <p>Number of question {{num}}</p>
+        <h2>Marks:-{{score}}</h2>
+        <a href="/"><button type="button" class="btn btn-primary">Back to Home</button></a>
+</div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock%}
